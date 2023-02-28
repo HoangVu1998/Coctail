@@ -24,9 +24,9 @@ public class ToppingButton : MonoBehaviour
     {
         // Lấy ra một vị trí ngẫu nhiên trong khoảng giữa hai điểm PointThrowFruits
         var position = new Vector2(Random.Range(furitsManager.FutirsPointThrow[0].position.x, furitsManager.FutirsPointThrow[1].position.x), furitsManager.FutirsPointThrow[0].position.y);
-
         // Tạo ra một đối tượng mới từ mảng FruitsPrefabsBeer ở vị trí position
         var a = Instantiate(furitsManager.characterUIList[UIManager.Instance.CharacterType].FrutisList[Index], position, Quaternion.identity);
+        DYYMain.CountFurits++;
 
         // Kiểm tra nếu biến uonghet được set là true từ DetectShake, hủy đối tượng
         if (DetectShake.uonghet == true)
@@ -34,15 +34,11 @@ public class ToppingButton : MonoBehaviour
             Destroy(a);
         }
     }
+    //dùng cho cái cốc defule của DIY cho chung vào đây.
     public void onClickModalDIY()
     {
-        //TỌA RA BẢN SAO ĐỐI TƯỢNG TRÊN MÀN 1
         GameObject clickedModalClone = EventSystem.current.currentSelectedGameObject;
         int index = DYYMain.modalCloneList.IndexOf(clickedModalClone);
         DYYMain.Indexer=index;  
-       // GameObject newModalClone = Instantiate(DYYMain.modalCloneList[index], transform.parent);
-       // newModalClone.transform.SetParent(DYYMain.Panel1);
-       // DYYMain.NewmodalCloneList.Add(clickedModalClone);
-       //ĐI TỚI MÀN 2
     }
 }

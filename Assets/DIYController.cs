@@ -10,14 +10,18 @@ public class DIYController : MonoBehaviour
     public GameObject UI;
     public bool DIYMove;
     public bool DIYRotate;
+    public bool isMan4;
+    public GameObject MainGameDIY;
 
     public GameObject ModalDIY;
 
-    private void Update()
+    private void Awake()
     {
         instance = this;
         DIYMove = false;
         DIYRotate = false;
+        isMan4 = false;
+
     }
     public void startDIY()
     {

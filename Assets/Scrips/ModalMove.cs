@@ -53,7 +53,7 @@ public class ModalMove : MonoBehaviour
             modalMoveAfter();
         }
     }
-    public void modalMoveBefore()
+    public virtual void modalMoveBefore()
     {
         moveToWards(TargetOriganal);
         if (Vector2.Distance(transform.position, TargetOriganal.position) < 0.01f)

@@ -295,13 +295,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6228878669629838448}
   - component: {fileID: 1715526713592316683}
+  - component: {fileID: 4071403480009297351}
   m_Layer: 0
   m_Name: ModalDIY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6228878669629838448
 Transform:
   m_ObjectHideFlags: 0
@@ -329,6 +330,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a9a47600b8c2249ba76c42da688366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4071403480009297351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150782678337201037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ada8927967e61e49817d9896bb2c83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1201132007535750015
@@ -5546,15 +5559,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 40669341ba53a504594c4c19f375227d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 25.606253, y: 12.799999}
+  m_Size: {x: 25.6, y: 12.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3274838955830108676
@@ -5612,7 +5625,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
     oldSize: {x: 25.6, y: 12.8}
-    newSize: {x: 25.606253, y: 12.799999}
+    newSize: {x: 25.6, y: 12.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
