@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defec95c56b409a4d99b67b96eee3509, type: 3}
+  m_Name: ToppingCoktail
+  m_EditorClassIdentifier: 
+  ListTopping:
+  - {fileID: 9135415502441336617, guid: 22d23921ec5dea84ba70bf02d8d41921, type: 3}
+  - {fileID: 9135415502441336617, guid: 3733949f49d8e964e847633712816e90, type: 3}
+  - {fileID: 9135415502441336617, guid: 289ebcb276c76084c832618f4ace082e, type: 3}

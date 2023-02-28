@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a6bd0981c9fd4f8f319523a410d58, type: 3}
+  m_Name: Beer
+  m_EditorClassIdentifier: 
+  listCard:
+  - ModalDrink: {fileID: 21300000, guid: 78b09258d9ac7074d9f1b6c34140222c, type: 3}
+    Tikket: {fileID: 21300000, guid: 8ecdf1ef1d4cc5a41a892914b05f1774, type: 3}
+    ToppingBeer: {fileID: 11400000, guid: 4bf906b6a6bf5bb4fa69aed753cee14e, type: 2}
+    ToppingCoctail: {fileID: 11400000, guid: c2321afaa7abaa240b345e4465f1e56f, type: 2}
+    ToppingMore: {fileID: 11400000, guid: 6cdd84b50753d414bb77076770e72802, type: 2}

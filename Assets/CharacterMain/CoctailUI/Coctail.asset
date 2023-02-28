@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d310b092d07a94da0aaa335ad442fd, type: 3}
+  m_Name: Coctail
+  m_EditorClassIdentifier: 
+  CharacterUI:
+  - {fileID: 21300000, guid: 9135edc1cdfa2cd45b870107a2999f51, type: 3}
+  - {fileID: 21300000, guid: 70fb3c169a275c747866ce09ed5c32fe, type: 3}
+  - {fileID: 21300000, guid: 5d0f274094611dd41ad305265d28460e, type: 3}
+  - {fileID: 21300000, guid: a61f1ed011a1b334792b82139b3db90f, type: 3}
+  - {fileID: 21300000, guid: 179a659a5149534469e1013a1fa724f4, type: 3}
+  - {fileID: 21300000, guid: ca05648d277b7d64d9257515153c63dc, type: 3}
+  - {fileID: 21300000, guid: 01066db19b54d164f88a4b67635b5f56, type: 3}
+  - {fileID: 21300000, guid: 76396ff04d11a75488b7a7742e99ed59, type: 3}
+  - {fileID: 21300000, guid: d2dbd2d9d950fcc4195761ebcefba482, type: 3}
+  - {fileID: 21300000, guid: d597d0f1c26fbdb44b7f40dd61755de6, type: 3}
+  - {fileID: 21300000, guid: 298bdda9a605c03449d5cf589eae4f04, type: 3}
+  - {fileID: 21300000, guid: ddb39f680accfd44aa3de6249cd686da, type: 3}
+  CharacterModal:
+  - {fileID: 21300000, guid: 40669341ba53a504594c4c19f375227d, type: 3}
+  - {fileID: 21300000, guid: 812ed3f228cdc6e48ac212c715b07996, type: 3}
+  - {fileID: 21300000, guid: 9e7d1826dd8069a47ac581aaa3845cf4, type: 3}
+  - {fileID: 21300000, guid: 40669341ba53a504594c4c19f375227d, type: 3}
+  - {fileID: 21300000, guid: 812ed3f228cdc6e48ac212c715b07996, type: 3}
+  - {fileID: 21300000, guid: 9e7d1826dd8069a47ac581aaa3845cf4, type: 3}
+  - {fileID: 21300000, guid: 40669341ba53a504594c4c19f375227d, type: 3}
+  - {fileID: 21300000, guid: 812ed3f228cdc6e48ac212c715b07996, type: 3}
+  - {fileID: 21300000, guid: 9e7d1826dd8069a47ac581aaa3845cf4, type: 3}
+  - {fileID: 21300000, guid: 40669341ba53a504594c4c19f375227d, type: 3}
+  - {fileID: 21300000, guid: 812ed3f228cdc6e48ac212c715b07996, type: 3}
+  - {fileID: 21300000, guid: 9e7d1826dd8069a47ac581aaa3845cf4, type: 3}
+  ImageButtonTopping:
+  - {fileID: 9135415502441336617, guid: f04d7dade168fc14fbb43d6487d631a1, type: 3}
+  - {fileID: 9135415502441336617, guid: 6e58b8593e06d0141bcc6b068ac345e3, type: 3}
+  - {fileID: 9135415502441336617, guid: 9893783feea2f914392fc82170519621, type: 3}
+  FrutisList:
+  - {fileID: 9135415502441336617, guid: f04d7dade168fc14fbb43d6487d631a1, type: 3}
+  - {fileID: 1165971719763804556, guid: 0ad35217903d73949a228acf4006e635, type: 3}
+  - {fileID: 8611826042163539043, guid: a83fd55b206c7d545a5669e954e9273c, type: 3}
+  ImageTichxanh: {fileID: 21300000, guid: 49b8be2509103d14cb4e86bd87ad7243, type: 3}
