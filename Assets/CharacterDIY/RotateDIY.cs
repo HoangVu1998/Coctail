@@ -6,6 +6,9 @@ public class RotateDIY : RotateGamer
 {
     private void Update()
     {
-        
+        if (DIYController.instance.isMan7)
+        {
+            Rotate();
+        }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1881155911692374583}
   - component: {fileID: 1881155911692374582}
   - component: {fileID: 1881155911692374581}
-  - component: {fileID: 1881155911692374580}
+  - component: {fileID: 892514226686263237}
   m_Layer: 5
   m_Name: CocDefult
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4715b995cb3717948b9a87c4427ba7cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -123,8 +123,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1881155911692374580}
-        m_TargetAssemblyTypeName: ToppingButton, Assembly-CSharp
+      - m_Target: {fileID: 892514226686263237}
+        m_TargetAssemblyTypeName: DIYButtonToping, Assembly-CSharp
         m_MethodName: onClickModalDIY
         m_Mode: 1
         m_Arguments:
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1881155911692374580
+--- !u!114 &892514226686263237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1881155911692374578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1b93b728603524f84a2911900886d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e4131190b429c640ba4d47dcce47530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DYYMain: {fileID: 0}

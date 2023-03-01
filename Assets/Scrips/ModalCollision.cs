@@ -7,11 +7,12 @@ public class ModalCollision : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (ModalMove.isFiling == true)
+        if (ModalMove.isFiling == true && DIYController.instance.isDIY==false)
         {
             if (collision.gameObject.CompareTag("1"))
             {
                 DetectShake.uonghet = true;
+                DestroyGamer.destroynow = true; 
             }
         }
     }

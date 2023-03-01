@@ -126,6 +126,6 @@ public class ModalMove : MonoBehaviour
     }
     public virtual void moveToWards(Transform target)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position,2* Time.deltaTime);
     }
 }

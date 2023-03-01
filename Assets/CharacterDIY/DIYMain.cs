@@ -13,7 +13,7 @@ public class DIYMain : MonoBehaviour
     //Modal và cốc nguyên thủy
     public GameObject CocDefult;
     public GameObject ModalDIY;
-    GameObject ModalClone;
+    public GameObject ModalClone;
 
     protected SpriteRenderer spriteRendererDIY;
 
@@ -21,6 +21,11 @@ public class DIYMain : MonoBehaviour
     public GameObject Man3DIY;
     public GameObject Man4DIY;
     public GameObject Man5DIY;
+    public GameObject Man6DIY;
+    public Image ImageMan6DIY;
+    public GameObject Man7DIY;
+
+    public bool BoolcountFurits;
 
     public Transform Content;
 
@@ -36,7 +41,7 @@ public class DIYMain : MonoBehaviour
     public int Indexer;
 
 
-    DIYController DIYControllerClone;
+    public DIYController DIYControllerClone;
     Image ImageCocDefult;
     private void Awake()
     {
@@ -55,10 +60,12 @@ public class DIYMain : MonoBehaviour
     private void Start()
     {
         CountFurits = 0;
+        BoolcountFurits = false;
     }
     private void Update()
     {
         DIybackToStep4();
+
     }
     public void BackToStartGame()
     {
@@ -69,7 +76,7 @@ public class DIYMain : MonoBehaviour
     }
     public void DIybackToStep2()
     {
-        foreach (var Image in DIYController.instance.characterDIY[UIManager.Instance.CharacterType].CharacterUI)
+        foreach (var Image in DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].CharacterUI)
         {
             ImageCocDefult.sprite = Image;
             ModalDYE = Instantiate(CocDefult, Panelman2);
@@ -82,31 +89,60 @@ public class DIYMain : MonoBehaviour
     {
         Man2DIY.SetActive(false);
         Man3DIY.SetActive(true);
-        spriteRendererDIY.sprite = DIYController.instance.characterDIY[UIManager.Instance.CharacterType].CharacterModal[Indexer];
+        spriteRendererDIY.sprite = DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].CharacterModal[Indexer];
         ModalClone = Instantiate(ModalDIY);
+        Debug.Log("indexer" + Indexer);
         ModalClone.SetActive(true);
     }
 
     public void DIybackToStep4()
     {
+
         if (DIYControllerClone.isMan4)
         {
             Man4DIY.SetActive(true);
             DIYControllerClone.MainGameDIY.SetActive(true);
+            DIYControllerClone.BG.SetActive(false);
 
-            foreach (var topping in DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].ImageButtonTopping)
+            foreach (var topping in DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].DIYImageButtonTopping)
             {
                 GameObject toppingSpawn = Instantiate(topping, Content);
                 toppingSpawn.transform.SetParent(Content);
             }
             DIYControllerClone.isMan4 = false;
         }
-        if (CountFurits == 20)
+        if (CountFurits == 5 && BoolcountFurits == false)
         {
+            DIYControllerClone.isDIY = true;
+            BoolcountFurits = true;
+            CountFurits = 0;
             Man5DIY.SetActive(true);
             Man3DIY.SetActive(false);
-            ModalClone.SetActive(false);
-            DIYControllerClone.MainGameDIY.SetActive(false);   
+            //quan lý modal
+            //ModalClone.SetActive(false);
+            Destroy(ModalClone);
+            DIYControllerClone.MainGameDIY.SetActive(false);
+            DIYControllerClone.isMan4 = false;
+            DIYControllerClone.isMan5 = true;
         }
+    }
+    public void DIybackToStep5()
+    {
+        Man5DIY.SetActive(false);
+        Man6DIY.SetActive(true);
+    }
+    public void DIybackToStep6()
+    {
+        ImageMan6DIY.sprite = DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].CharacterUI[Indexer];
+    }
+    public void DIybackToStep7()
+    {
+        Man6DIY.SetActive(false);
+        spriteRendererDIY.sprite = DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].CharacterModal[Indexer];
+        ModalClone = Instantiate(ModalDIY);
+        ModalMove.isFiling = false;
+        ModalClone.SetActive(true);
+        Debug.Log(ModalMove.isFiling + "ModalMove.isFiling");
+        
     }
 }
