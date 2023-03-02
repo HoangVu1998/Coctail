@@ -6,15 +6,15 @@ public class MainGameDIY : MainGame
 {
     void Update()
     {
-        if (LevelController.isShake == true)
+        if (LevelController.isShake == true && DIYController.instance.isMan7)
         {
             gameObject.SetActive(true);
-            //var a = Instantiate(MainGameController.instance.ModalDefult);
-            //LevelController.isShake = false;
-            //if (DetectShake.uonghet == true)
-            //{
-            //    Destroy(a);
-            //}
+            var a = Instantiate(MainGameController.instance.ModalDefult);
+            LevelController.isShake = false;
+            if (DetectShake.uonghet == true)
+            {
+                Destroy(a);
+            }
         }
     }
 }

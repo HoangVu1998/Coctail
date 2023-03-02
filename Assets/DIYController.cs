@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class DIYController : MonoBehaviour
@@ -16,9 +17,13 @@ public class DIYController : MonoBehaviour
     public bool isMan7;
     public bool isDIY;
     public GameObject BG;
-
+    //các GamePlay Defult.
     public GameObject MainGameDIY;
+    public GameObject ModalDefult;
+    public GameObject ModalDefultClone;
     public GameObject ModalDIY;
+    //quản lý hoa quả.
+
 
     private void Awake()
     {
@@ -48,10 +53,13 @@ public class DIYController : MonoBehaviour
         UI.SetActive(true);
         DIY.SetActive(false);
     }
+    public void DIybackToStep4()
+    {
+    }
     public void DIybackToStep5()
     {
-        DIYMain.instance.DIybackToStep5(); 
-        BG.SetActive(false); 
+        DIYMain.instance.DIybackToStep5();
+        BG.SetActive(false);
     }
     public void DIybackToStep6()
     {
@@ -62,11 +70,16 @@ public class DIYController : MonoBehaviour
     }
     public void DIybackToStep7()
     {
+        DIYButtonToping.instace.CreatFutits();
         BG.SetActive(true);
         DIYMain.instance.DIybackToStep7();
         MainGameDIY.SetActive(true);
-        //isMan7= true;
+        MainGameController.instance.spriteRendererMain.sprite = characterDIY[UIManager.Instance.CharacterType].CharacterModal[DIYMain.instance.Indexer];
+        var a = Instantiate(MainGameController.instance.ModalDefult);
+        isMan7 = true;
         isDIY = false;
+        
+
     }
 }
 

@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 public class ToppingButton : MonoBehaviour
 {
     FuritsManager furitsManager;
-   // public DIYMain DYYMain;
     private void Awake()
     {
         // Tìm đối tượng FuritsController trên cảnh

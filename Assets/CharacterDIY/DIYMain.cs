@@ -7,16 +7,19 @@ using UnityEngine.UI;
 public class DIYMain : MonoBehaviour
 {
     public static DIYMain instance;
+    //vị trí luư obj
     public Transform Panel1;
     public Transform Panelman2;
+    public Transform SaveModalDIY;
 
     //Modal và cốc nguyên thủy
+    public GameObject ModalDefult;
     public GameObject CocDefult;
     public GameObject ModalDIY;
     public GameObject ModalClone;
 
     protected SpriteRenderer spriteRendererDIY;
-
+    //level
     public GameObject Man2DIY;
     public GameObject Man3DIY;
     public GameObject Man4DIY;
@@ -24,6 +27,8 @@ public class DIYMain : MonoBehaviour
     public GameObject Man6DIY;
     public Image ImageMan6DIY;
     public GameObject Man7DIY;
+    //list Furits được tạo ta
+    public List<GameObject> listFuritsDIY = new List<GameObject>();
 
     public bool BoolcountFurits;
 
@@ -91,7 +96,7 @@ public class DIYMain : MonoBehaviour
         Man3DIY.SetActive(true);
         spriteRendererDIY.sprite = DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].CharacterModal[Indexer];
         ModalClone = Instantiate(ModalDIY);
-        Debug.Log("indexer" + Indexer);
+        ModalClone.transform.SetParent(SaveModalDIY);
         ModalClone.SetActive(true);
     }
 
@@ -103,7 +108,7 @@ public class DIYMain : MonoBehaviour
             Man4DIY.SetActive(true);
             DIYControllerClone.MainGameDIY.SetActive(true);
             DIYControllerClone.BG.SetActive(false);
-
+            DIYButtonToping.instace.ResetScores();  
             foreach (var topping in DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].DIYImageButtonTopping)
             {
                 GameObject toppingSpawn = Instantiate(topping, Content);
@@ -111,7 +116,7 @@ public class DIYMain : MonoBehaviour
             }
             DIYControllerClone.isMan4 = false;
         }
-        if (CountFurits == 5 && BoolcountFurits == false)
+        if (CountFurits == 15 && BoolcountFurits == false)
         {
             DIYControllerClone.isDIY = true;
             BoolcountFurits = true;
@@ -119,9 +124,8 @@ public class DIYMain : MonoBehaviour
             Man5DIY.SetActive(true);
             Man3DIY.SetActive(false);
             //quan lý modal
-            //ModalClone.SetActive(false);
-            Destroy(ModalClone);
             DIYControllerClone.MainGameDIY.SetActive(false);
+            Destroy(ModalClone);
             DIYControllerClone.isMan4 = false;
             DIYControllerClone.isMan5 = true;
         }
@@ -138,11 +142,5 @@ public class DIYMain : MonoBehaviour
     public void DIybackToStep7()
     {
         Man6DIY.SetActive(false);
-        spriteRendererDIY.sprite = DIYControllerClone.characterDIY[UIManager.Instance.CharacterType].CharacterModal[Indexer];
-        ModalClone = Instantiate(ModalDIY);
-        ModalMove.isFiling = false;
-        ModalClone.SetActive(true);
-        Debug.Log(ModalMove.isFiling + "ModalMove.isFiling");
-        
     }
 }

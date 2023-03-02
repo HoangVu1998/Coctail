@@ -8,7 +8,7 @@ public class MainGameController : MonoBehaviour
     public static MainGameController instance;
     public GameObject MainGame;
     public GameObject ModalDefult;
-    protected SpriteRenderer spriteRendererMain;
+    public SpriteRenderer spriteRendererMain;
     public List<characterUI> characterUI;
 
     public Transform Content;
