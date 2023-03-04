@@ -29,8 +29,10 @@ public class DIYButtonToping : ToppingButton
         var position = new Vector2(UnityEngine.Random.Range(furitsManager.FutirsPointThrow[0].position.x, furitsManager.FutirsPointThrow[1].position.x), furitsManager.FutirsPointThrow[0].position.y);
         // Tạo ra một đối tượng mới từ mảng FruitsPrefabsBeer ở vị trí position
         var a = Instantiate(furitsManager.characterUIList[UIManager.Instance.CharacterType].FrutisList[Index], position, Quaternion.identity);
-        DYYMain.CountFurits++;
-        
+        if (!DIYController.instance.isMan7)
+        {
+            DYYMain.CountFurits++;
+        }
         Save(Index);
         // Kiểm tra nếu biến uonghet được set là true từ DetectShake, hủy đối tượng
         if (DetectShake.uonghet == true)
@@ -43,7 +45,6 @@ public class DIYButtonToping : ToppingButton
         GameObject clickedModalClone = EventSystem.current.currentSelectedGameObject;
         int index = DYYMain.modalCloneList.IndexOf(clickedModalClone);
         DYYMain.Indexer = index;
-        Debug.Log(index);
     }
     public void Save(int index)
     {
@@ -53,7 +54,6 @@ public class DIYButtonToping : ToppingButton
         // Tăng giá trị số lần đó lên 1 và lưu vào key tương ứng
         currentCount++;
         PlayerPrefs.SetInt("button_" + index.ToString(), currentCount);
-
         // Lưu lại để chắc chắn rằng thay đổi được lưu vào PlayerPrefs
         PlayerPrefs.Save();
     }
@@ -69,11 +69,9 @@ public class DIYButtonToping : ToppingButton
         var position = new Vector2(UnityEngine.Random.Range(furitsManager.FutirsPointThrow[0].position.x, furitsManager.FutirsPointThrow[1].position.x), furitsManager.FutirsPointThrow[0].position.y);
         for (int i = 0; i < furitsManager.characterUIList[UIManager.Instance.CharacterType].FrutisList.Count;i++)
         {
-          Debug.Log("Load(i)"  +" "+i+ " " + Load(i));
             for (int j=0;j<Load(i);j++)
             {
                 Instantiate(furitsManager.characterUIList[UIManager.Instance.CharacterType].FrutisList[i], position, Quaternion.identity);
-                Debug.Log("Load(i)" + i+ "  "+j);
             } 
         }
         ResetScores();
@@ -81,5 +79,13 @@ public class DIYButtonToping : ToppingButton
     public void ResetScores()
     {
         PlayerPrefs.DeleteAll();
+    }
+    public void Destroy()
+    {
+        Destroy(gameObject);    
+    }
+    public void testIndexer()
+    {
+        Debug.Log(DIYMain.instance.Indexer);
     }
 }

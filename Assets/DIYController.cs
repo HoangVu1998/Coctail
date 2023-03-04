@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DIYController : MonoBehaviour
@@ -41,15 +42,11 @@ public class DIYController : MonoBehaviour
     }
     public void OnClickBackToUI()
     {
-        foreach (var Intemr in DIYMain.instance.modalCloneList)
+        foreach (Transform child in DIYMain.instance.Panelman2.transform)
         {
-            DestroyImmediate(Intemr);
+            GameObject.Destroy(child.gameObject);
         }
-        foreach (var Intemr in DIYMain.instance.NewmodalCloneList)
-        {
-            DestroyImmediate(Intemr);
-            Debug.Log(DIYMain.instance.NewmodalCloneList.Count);
-        }
+        DIYMain.instance.modalCloneList.Clear();
         UI.SetActive(true);
         DIY.SetActive(false);
     }
@@ -76,10 +73,23 @@ public class DIYController : MonoBehaviour
         MainGameDIY.SetActive(true);
         MainGameController.instance.spriteRendererMain.sprite = characterDIY[UIManager.Instance.CharacterType].CharacterModal[DIYMain.instance.Indexer];
         var a = Instantiate(MainGameController.instance.ModalDefult);
+        a.transform.SetParent(DIYMain.instance.SaveModalDIY);
         isMan7 = true;
         isDIY = false;
-        
-
+    }
+    public void DIybackToStep1()
+    {
+        foreach (Transform child in DIYMain.instance.SaveModalDIY.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        DIYMain.instance.DIybackToStep1();
+        MainGameDIY.SetActive(false);
+        DestroyGamer.destroynow = true;
+        isMan7 = false;
+        isDIY = true;
+        DIYMain.instance.CountFurits= 0;    
     }
 }
+
 
